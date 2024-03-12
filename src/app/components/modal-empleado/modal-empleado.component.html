@@ -1,0 +1,71 @@
+<h1 mat-dialog-title>{{ tituloModal }}</h1>
+
+<mat-dialog-content>
+  <form class="modal-empleado" [formGroup]="formularioEmpleado">
+    <mat-grid-list cols="1" rowHeight="80px">
+      
+      <mat-grid-tile class="col">
+        <mat-form-field appearance="outline">
+          <mat-label>Nombre</mat-label>
+          <input  formControlName="nombre" matInput autocomplete="off" />
+          <mat-icon matSuffix>account-box</mat-icon>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field appearance="outline">
+          <mat-label>Apellido</mat-label>
+          <input formControlName="apellido" matInput autocomplete="off" />
+          <mat-icon matSuffix>account-box</mat-icon>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field appearance="outline">
+          <mat-label>Rol</mat-label>
+          <mat-select formControlName="idRol">
+            @for (rol of ListRoles ; track rol.idRol) {
+              <mat-option [value]="rol.idRol">{{ rol.descripcion }}</mat-option>
+              }
+         
+          </mat-select>
+          <mat-icon matSuffix>account-box</mat-icon>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field appearance="outline">
+          <mat-label>Correo</mat-label>
+          <input formControlName="correo" matInput autocomplete="off" />
+          <mat-icon matSuffix>account-box</mat-icon>
+        </mat-form-field>
+      </mat-grid-tile >
+
+      <mat-grid-tile>
+        <mat-form-field appearance="outline">
+          <mat-label>Clave</mat-label>
+          <input type="password" formControlName="clave" matInput autocomplete="off" />
+          <mat-icon matSuffix>account-box</mat-icon>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field appearance="outline">
+          <mat-label>Estado</mat-label>
+          <mat-select formControlName="activo">
+            <mat-option value="1">Activo</mat-option>
+            <mat-option value="0">No Activo</mat-option>
+          </mat-select>
+          <mat-icon matSuffix>account-box</mat-icon>
+        </mat-form-field>
+      </mat-grid-tile>
+
+    </mat-grid-list>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-raised-button color="warn" (click)="guardarEmpleado()">
+    {{ nombreBoton }}
+  </button>
+</mat-dialog-actions>

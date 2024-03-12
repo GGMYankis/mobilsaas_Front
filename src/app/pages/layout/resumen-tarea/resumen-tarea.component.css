@@ -1,0 +1,45 @@
+
+.card-info{
+    width: 80%;
+    border-radius: 10px;
+    background-color: #f1f2f4;
+    padding: 8px;
+}
+
+.card-box{
+    border: 3px solid transparent;
+    border-radius: 8px;
+}
+
+.card-box:hover{
+    border: 3px solid #f44336;
+    cursor: pointer;
+}
+
+.cont-box{
+    display: flex;
+    justify-content: space-between;
+}
+
+.circle{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #f44336;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.date{
+    padding: 5px;
+    border-radius: 3px;
+    background-color: #f8fcf9;
+    border: 1px solid #86cf95;
+    color: #068019;
+    font-size: 14px;
+
+    margin-right: 20px;
+}

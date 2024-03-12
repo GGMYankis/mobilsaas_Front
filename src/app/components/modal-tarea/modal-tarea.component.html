@@ -1,0 +1,75 @@
+<h1 mat-dialog-title>Crear Tarea</h1>
+
+<mat-dialog-content>
+  <form [formGroup]="formularioTarea">
+    <mat-grid-list cols="1" rowHeight="80px">
+      <mat-grid-tile>
+        <mat-form-field appearance="outline">
+          <mat-label>Titulo</mat-label>
+          <input matInput formControlName="titulo" />
+          <mat-icon matSuffix></mat-icon>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field appearance="outline">
+          <mat-label>Descripcion</mat-label>
+          <input matInput formControlName="descripcion" />
+          <mat-icon matSuffix></mat-icon>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field appearance="outline">
+          <mat-label>Tipo</mat-label>
+          <mat-select formControlName="tipo">
+            <mat-option value="frontEnd">FrontEnd</mat-option>
+            <mat-option value="backEnd">BackEnd</mat-option>
+          </mat-select>
+          <mat-icon matSuffix>account-box</mat-icon>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field appearance="outline">
+          <mat-label>Usuario</mat-label>
+          <mat-select matNativeControl required formControlName="idUsuario">
+            @for (user of listUser ; track user.idUsuario) {
+            <mat-option [value]="user.idUsuario">{{ user.nombre }}</mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field appearance="outline">
+          <mat-label>Creador</mat-label>
+          <mat-select formControlName="idCreador">
+            @for (user of listUser ; track user.idUsuario) {
+            <mat-option [value]="user.idUsuario">{{ user.nombre }}</mat-option>
+            }
+          </mat-select>
+          <mat-icon matSuffix>account-box</mat-icon>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field appearance="outline">
+          <mat-label>Estado</mat-label>
+          <mat-select formControlName="activo">
+            <mat-option value="1">Activo</mat-option>
+            <mat-option value="0">No Activo</mat-option>
+          </mat-select>
+          <mat-icon matSuffix>account-box</mat-icon>
+        </mat-form-field>
+      </mat-grid-tile>
+
+     
+
+    </mat-grid-list>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-raised-button color="warn" (click)="nuevaTarea()">Guadar</button>
+</mat-dialog-actions>

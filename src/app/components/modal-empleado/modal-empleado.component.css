@@ -1,0 +1,10 @@
+* {
+  box-sizing: border-box;
+}
+mat-form-field {
+  width: 100%;
+}
+
+.modal-empleado {
+  width: 450px;
+}

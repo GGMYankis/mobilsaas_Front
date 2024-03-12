@@ -1,0 +1,31 @@
+
+<h1 style="margin: 20px 0px 0px 40px">Tablero de Tareas</h1>
+
+<mat-card style="margin: 20px 40px 40px 40px">
+  <mat-card-content>
+    <mat-grid-list class="grid" cols="3" rowHeight="150px">
+      @for (t of ListaTareas ; track t.idTarea) {
+
+        <mat-grid-tile class="col" >
+          <mat-card class="card-info" (click)="verTarea(t)">
+            <mat-card class="card-box">
+              <mat-card-header style="display: flex; justify-content: space-between;">
+                <div mat-card-avatar>
+                  <mat-icon>work</mat-icon>
+                </div>
+                <mat-card-title>{{ t.nombreUsuario }}</mat-card-title>
+              </mat-card-header>
+              <mat-card-content class="cont-box">
+                <div class="date">
+                  {{ t.fechaLimite.substring(0, 10) }}
+                </div>
+                <div class="circle">{{t.nombreUsuario.substring(0,1).toUpperCase()+t.apellidoUsuario.substring(0,1).toUpperCase()}}</div>
+              </mat-card-content>
+            </mat-card>
+          </mat-card>
+        </mat-grid-tile>
+
+      }
+    </mat-grid-list>
+  </mat-card-content>
+</mat-card>

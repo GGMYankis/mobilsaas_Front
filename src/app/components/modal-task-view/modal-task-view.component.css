@@ -1,0 +1,17 @@
+.container-detalles {
+  display: flex;
+  align-items: center;
+}
+.box {
+  margin-right: 20px;
+}
+.box h3 {
+  margin: 0;
+  font-size: 14px;
+}
+
+.descripcion{
+    width: 100%;
+    font-weight: 600;
+}
+

@@ -1,0 +1,36 @@
+.login-container {
+  height: 100vh;
+  max-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #f5f5f5;
+
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.login-card {
+  max-width: 400px;
+  text-align: center;
+  padding:40px;
+  border-radius: 20px;
+}
+
+.btn-login {
+  width: 100%;
+  padding: 10px 0;
+}
+
+.title-login{
+    margin: 40px 0 ;
+}
+
+.get-password{
+  margin-top: 20px;
+  color: #f44336;
+  font-size: 18px;
+}

@@ -1,0 +1,61 @@
+<h1
+  mat-dialog-title
+  style="font-weight: 500; display: flex; align-items: center"
+>
+  <mat-icon style="margin-right: 15px">work</mat-icon> Tarea para
+  {{ datatarea.nombreUsuario }}
+</h1>
+
+<mat-dialog-content>
+  <div class="container-detalles">
+    <div class="box">
+      <h3>Miembros</h3>
+      <button mat-icon-button color="warn">
+        {{ datatarea.nombreUsuario.substring(0, 2).toUpperCase() }}
+      </button>
+    </div>
+
+    <div class="box">
+      <h3>Creada por</h3>
+      <button mat-raised-button color="primary">
+        {{ datatarea.nombreCreador }}
+      </button>
+    </div>
+    <div class="box">
+      <h3>Tipo</h3>
+      <button
+        mat-raised-button
+        [color]="datatarea.tipo === 'backEnd' ? 'accent' : 'warn'"
+      >
+        {{ datatarea.tipo }}
+      </button>
+    </div>
+  </div>
+
+  <div style="margin-top: 20px; display: flex;
+  justify-content: space-between; align-items: center; ">
+    <form [formGroup]="formulario">
+      <mat-form-field appearance="outline" style="padding-bottom: 0; margin: 0;">
+        <mat-label>Tipo</mat-label>
+        <mat-select formControlName="activo" >
+          <mat-option value="1">Activa</mat-option>
+          <mat-option value="0">No Activa</mat-option>
+        </mat-select>
+        <mat-icon matSuffix>account-box</mat-icon>
+      </mat-form-field>
+    </form>
+
+  <button style="margin-bottom: 1.34375em;" mat-raised-button color="warn" (click)="editarTarea()">Editar</button>
+
+  </div>
+
+  <div style="margin-top: 20px">
+    <h1 style="font-weight: 500; display: flex; align-items: center">
+      <mat-icon style="margin-right: 15px">description</mat-icon> Descripción
+    </h1>
+    <div style="min-height: 70px; border: none" class="descripcion">
+      {{ datatarea.descripcion }}
+    </div>
+  </div>
+</mat-dialog-content>
+

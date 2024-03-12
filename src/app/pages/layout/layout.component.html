@@ -1,0 +1,45 @@
+<mat-toolbar color="warn">
+  <h1 class="logo">Mobilsoft</h1>
+   <label style="font-size: 14px; margin: right 20px"> {{ rol }}</label> 
+  <button
+    mat-icon-button
+    class="option-header"
+    [matMenuTriggerFor]="menuNav"
+    color="warn"
+  >
+    {{nombre.toUpperCase()}}
+  </button>
+  <mat-icon class="menu" (click)="menu.toggle()">menu</mat-icon>
+
+  <mat-menu #menuNav="matMenu">
+    <button mat-menu-item routerLink="/login">Login</button>
+    <button mat-menu-item routerLink="/login" (click)="cerrarSesion()">Cerrar Sesion</button>
+  </mat-menu>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav style="width: 250px;" mode="side" opened="true" #menu >
+  
+    <mat-nav-list>
+      
+      <mat-list-item routerLink="/pages/empleados">
+        <mat-icon class="icon" mat-list-icon>group</mat-icon>
+        <div mat-line class="link">Empleados</div>
+      </mat-list-item>
+      <mat-list-item routerLink="/pages/tareas">
+        <mat-icon class="icon" mat-list-icon>add</mat-icon>
+        <span mat-line class="link">Asignar Tareas</span>
+      </mat-list-item>
+      <mat-list-item routerLink="/pages/resumenTarea">
+        <mat-icon class="icon" mat-list-icon>work</mat-icon>
+        <span mat-line class="link">Resumen de Tareas</span>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <div style="height: 90vh">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
